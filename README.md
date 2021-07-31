@@ -53,12 +53,6 @@ Estos son un conjunto de valores indexados entre 1 hasta n, que pueden ser de di
 ['a', 2.0, 5, ["Hola", "Mundo"]].
 ```
 
-También JOLC puede crear matrices usando espacios para separar elementos en una fila, y punto y coma `;` para separar las filas. Por ejemplo:
-
-```julia
-[1 2 3; 4 5 6]
-```
-
 Los arreglos cuentan con distintas operaciones que se detallarán en la sección de _Arreglos_.
 
 ### **Struct**
@@ -68,7 +62,7 @@ Estos son tipos compuestos definidos por el programador. Existen 2 tipos de Stru
 ```julia
 struct NOMBRE_STRUCT
     LISTA_ATRIBUTOS
-end
+end;
 ```
 
 Para declarar un Struct mutable se agrega la palabra reservada __mutable__:
@@ -76,16 +70,25 @@ Para declarar un Struct mutable se agrega la palabra reservada __mutable__:
 ```julia
 mutable struct NOMBRE_STRUCT
     LISTA_ATRIBUTOS
-end
+end;
 ```
 
 Y para crear una variable con nuestro Struct, se escribe:
 
 ```julia
-ID = NOMBRE_STRUCT(LISTA_VALORES)
+ID = NOMBRE_STRUCT(LISTA_VALORES);
 ```
 
-En la sección de Structs se detallará más al respecto de estos.
+Un ejemplo de creación de struct podría ser:
+
+```julia
+struct Rectangulo
+    base;
+    altura;
+end;
+```
+
+En la sección de _Structs_ se detallará más al respecto de estos.
 
 ## Expresiones
 
@@ -100,26 +103,26 @@ JOLC contará con las siguientes instrucciones de Julia:
 JOLC cuenta con 3 distintas instrucciones de imprimir.
 
 ```julia
-print(expresión)        # Esta imprime sin realizar un salto de línea
-println(expresión)      # Esta imprime realizando un salto de línea
-printTS()               # Esta muestra la tabla de símbolos en dónde fue llamada
+print(expresión);        # Esta imprime sin realizar un salto de línea
+println(expresión);      # Esta imprime realizando un salto de línea
+printTS();               # Esta muestra la tabla de símbolos en dónde fue llamada
 ```
 
 Para imprimir más de un valor por línea, se puede imprimir una secuencia de valores separados por comas. También dentro de las cadenas se pueden colocar cualquier expresión utilizando el operador `$`. Por ejemplo:
 
 ```julia
-println("+", "-")       # Imprime + -
-print("El resultado de 2 + 2 es $(2 + 2)")  # Imprime El resultado de 2 + 2 es 4
-println("$a $(b[1])") # Imprime el valor de a y el valor de b[1]
+println("+", "-");       # Imprime + -
+print("El resultado de 2 + 2 es $(2 + 2)");  # Imprime El resultado de 2 + 2 es 4
+println("$a $(b[1])"); # Imprime el valor de a y el valor de b[1]
 ```
 
 JOLC también tiene la opción de imprimir arreglos y struct. Por ejemplo:
 
 ```julia
-    a = [0, 1, 2]
-    println(a)          # Imprime [0, 1, 2]
-    s = Hora(10, 30)
-    print(s)            # Imprime Hora(10, 30)
+    a = [0, 1, 2];
+    println(a);          # Imprime [0, 1, 2]
+    s = Hora(10, 30);
+    print(s);            # Imprime Hora(10, 30)
 ```
 
 ### Asignaciones
@@ -133,10 +136,12 @@ Una llamada a función es como un desvío en el flujo de la ejecución. En lugar
 Para llamar a una función se realiza de la siguiente manera:
 
 ```julia
-NOMBRE_FUNCION(LISTA_PARAMETROS)
+NOMBRE_FUNCION(LISTA_PARAMETROS);
 ```
 
-Cuando se pasa un arreglo o struct como argumento de una función, en realidad se pasa una referencia de este. Por lo que cualquier cambio que se realice al parámetro, se podrá observar después de salir de la función.
+Los parámetros se separan por medio de `,` si la función cuenta con más de un parámetro. Cuando se pasa un arreglo o struct como argumento de una función, en realidad se pasa una referencia de este. Por lo que cualquier cambio que se realice al parámetro, se podrá observar después de salir de la función.
+
+Estas se pueden utilizar en expresiones, debido a que existen funciones que retornan un valor.
 
 ### Distintas Funciones Nativas
 
@@ -144,7 +149,26 @@ COLOCAR TEXTO DE FUNCIONES NATIVAS
 
 ### Funciones
 
-COLOCAR TEXTO DE FUNCIONES
+Las funcioens son secuencias de sentencias que ejecuta una operación que nosotros deseamos. Cuando se crea una función se especifica su nombre y secuencia de sentencias. Luego, ya se puede llamar a estas usando su nombre y los parámetros solicitados. Se definen las funciones en JOLC así:
+
+```julia
+function NOMBRE_FUNCION(LISTA_PARAMETROS)
+    LISTA_INSTRUCCIONES
+end;
+```
+
+Las instrucciones se separarán utilizando `;`. Por ejemplo:
+
+```julia
+function imprimirHola()
+    println("Hola");
+    println("Hola");
+end;
+```
+
+Hay que tomar en cuenta que las variables y parámetros que se creen dentro de una función son locales, es decir que únicamente existen dentro de la función.
+
+Las funciones también pueden llamarse a sí mismas. Lo que permite una gran variedad de aplicaciones en estructuras de datos y algoritmos de ordenamiento.
 
 ### Condicionales
 
