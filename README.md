@@ -102,8 +102,49 @@ En la sección de Structs se detallará más al respecto de estos.
 
 ## Expresiones
 
-COLOCAR TEXTO DE LAS EXPRESIONES
+JOLC acepta operaciones aritmeticas, relacionales y logicas de la siguiente forma:
 
+### Aritméticas
+Entre las operaciones aritmeticas disponibles vamos a encontrar las siguientes:
+- **Suma:** La suma de dos expresiones se define por el símbolo `+` 
+- **Resta:** La resta de dos expresiones y la negación de una expresión aritmetica se define por el símbolo `-` 
+- **Multiplicación:** La multiplicación de dos expresiones se define por el símbolo `*` 
+- **División:** La división de dos expresiones se define por el símbolo `/` 
+- **Potencia:** La potenciación de una expresión se define por el símbolo `^` 
+### Relacionales
+Entre las operaciones relacionales disponibles vamos a encontrar las siguientes:
+- **Igualdad:** Esta se define por el símbolo `==`
+- **Diferenciación:** Esta se define por el símbolo `!=`
+- **Mayor que:** Esta se define por el símbolo `>`
+- **Menor que:** Esta se define por el símbolo `<`
+- **Mayor o igual que:** Esta se define por el símbolo `>=`
+- **Menor o igual que:** Esta se define por el símbolo `<=`
+
+### Lógicas
+Entre las operaciones lógicas disponibles vamos a encontrar las siguientes:
+- **AND:** Esta se define por el símbolo `&&`
+- **OR:** Esta se define por el símbolo `||`
+- **NOT:** Esta se define por el símbolo `!`
+
+### Cadenas
+Entre las operaciones con cadenas (strings) vamos a encontrar las siguientes:
+- **Concatenación:** La unión de dos cadenas de texto se define por el símbolo `*`
+- **Repetición:** Permite que una cadena de texto se repita cierto número de veces, esta se define por el símbolo `^`
+  ```
+  "Cadena"^3 = "CadenaCadenaCadena"
+  ```
+- **Acceso a una pocisión:** El acceso a un elemento de una cadena se define de la siguiente manera: `string[posición]`, el cual devolvera el caracter correspondiente a esa posición
+- **Acceso a una porción:** El acceso a una porción de una cadena se define de la siguiente manera: `string[inicial:final]`, el cual devolvera la cadena correspondiente al intervalo definido
+- **Tamaño de una cadena:** La obtención del número de elementos de una cadena se define por la función `length(cadena)`
+- **Cadena en mayusculas:** Una cadena puede ser convertida a mayusculas con la utilización de la función `uppercase(cadena)`
+- **Cadena en minusculas:** Una cadena puede ser convertida a mayusculas con la utilización de la función `lowercase(cadena)`
+
+### Operador ternario
+El operador ternario es utilizado cuando se necesita entre diferentes expresiones a travez de una condición
+```
+(EXPRESIÓN RELACIONAL O LOGICA) ? RESULTADO SI ES VERDADERO : RESULTADO SU ES FALSO
+```
+  
 ## Instrucciones
 
 JOLC contará con las siguientes instrucciones de Julia:
