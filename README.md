@@ -273,7 +273,20 @@ Las funciones también pueden llamarse a sí mismas. Lo que permite una gran var
 
 ### Condicionales
 
-COLOCAR TEXTO DE CONDICIONALES
+JOLC cuenta con sentencias condicionales, lo que permite que un bloque de codigo pueda ser o no ejecutado. Estas se definen por `if`,`if...else` y `if...elseif`. Su estructura es la siguiente:
+```julia
+if CONDICION
+    LISTA_INTRUCCIONES
+end;
+
+if CONDICION1
+    LISTA_INTRUCCIONES
+elseif CONDICION2
+    LISTA_INTRUCCIONES
+else
+    LISTA_INTRUCCIONES
+end;
+```
 
 ### Loops
 
