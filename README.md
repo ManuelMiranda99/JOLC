@@ -126,7 +126,7 @@ Entre las operaciones lógicas disponibles vamos a encontrar las siguientes:
 Entre las operaciones con cadenas (strings) vamos a encontrar las siguientes:
 - **Concatenación:** La unión de dos cadenas de texto se define por el símbolo `*`
 - **Repetición:** Permite que una cadena de texto se repita cierto número de veces, esta se define por el símbolo `^`
-  ```
+  ```julia
   "Cadena"^3 = "CadenaCadenaCadena"
   ```
 - **Acceso a una pocisión:** El acceso a un elemento de una cadena se define de la siguiente manera: `string[posición]`, el cual devolvera el caracter correspondiente a esa posición
@@ -137,7 +137,7 @@ Entre las operaciones con cadenas (strings) vamos a encontrar las siguientes:
 
 ### Operador ternario
 El operador ternario es utilizado cuando se necesita entre diferentes expresiones a travez de una condición
-```
+```julia
 (EXPRESIÓN RELACIONAL O LOGICA) ? RESULTADO SI ES VERDADERO : RESULTADO SI ES FALSO
 ```
   
@@ -177,7 +177,7 @@ JOLC también tiene la opción de imprimir arreglos y struct. Por ejemplo:
 JOLC permite la declaración y asignación de variables, las variables no pueden cambiar su tipo de dato una vez definido
 
 - **Declaración:** JOLC permite declarar variables de dos maneras:
-```
+```julia
     ID = Expresión ::TIPO;
     ó
     ID = Expresión;
@@ -185,16 +185,16 @@ JOLC permite la declaración y asignación de variables, las variables no pueden
 Notese que la expresión `::TIPO` es opcional.
 
 - **Asignación:** JOLC permite asignar valores a variables existentes de la siguiente manera:
-```
+```julia
     ID = Expresión;
 ```
 - **Diferenciar entre variables globales y locales:**
   Debido a que la sintaxis de JOLC en cuanto a su declaración y asignación de variables es la misma, en caso de que se quiera declarar una nueva variable dentro de un entorno utilizando un `ID` existente en el entorno global se debe declarar la siguiente instrucción:
-```
+```julia
   local LISTA_ID;
 ```
 donde `LISTA_ID` se define como:
-```
+```julia
     ID,ID,...,ID
 ```
 de esta manera se sabra que estos ID seran para variables locales del entorno
@@ -215,7 +215,30 @@ Estas se pueden utilizar en expresiones, debido a que existen funciones que reto
 
 ### Distintas Funciones Nativas
 
-COLOCAR TEXTO DE FUNCIONES NATIVAS
+JOLC utiliza diversas funciones nativas para sus expresiones, estas son:
+- **Parse:** Toma una cadena y la convierte al tipo de numero que se le indice si es posible.
+```julia
+    parse(Int64,"8200")
+    ó
+    parse(Float64,"3.13159")
+```
+- **Trunc:** Convierte un número flotante a un número entero sin redondearlo
+```julia
+    trunc(Int64, 3.99999)  # retorna 3
+```
+- **Float:** Convierte un número entero a un número flotante
+```julia
+    float(34)  # retorna 34.0
+```
+- **String:** Convierte el argumento en una cadena, puede usarse en numeros y en arreglos
+```julia
+    string(45.87)  # retorna "45.87"
+    string([1,2,3])  # retorna "[1,2,3]"
+```
+- **typeof:** Muestra el tipo del argumento
+```julia
+    typeof(Expresión)
+```
 
 ### Funciones
 
