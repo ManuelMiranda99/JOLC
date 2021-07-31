@@ -6,7 +6,19 @@ A continuación se detalla la sintaxis que tendrá JOLC. Además de algunos arch
 
 ## Comentarios
 
-COLOCAR TEXTO DE LOS COMENTARIOS
+Los comentarios pueden ser:
+- Una linea (#)
+- Multiples lineas (#= ... =#)
+
+```
+    # Esto es un comentario de una sola linea
+
+    #=
+        Esto es un
+        comentario de
+        multiples lineas
+    =#
+```
 
 ## Tipos
 
