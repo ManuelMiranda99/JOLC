@@ -7,10 +7,11 @@ A continuación se detalla la sintaxis que tendrá JOLC. Además de algunos arch
 ## Comentarios
 
 Los comentarios pueden ser:
+
 - Una linea (#)
 - Multiples lineas (#= ... =#)
 
-```
+```julia
     # Esto es un comentario de una sola linea
 
     #=
@@ -62,7 +63,7 @@ Los arreglos cuentan con distintas operaciones que se detallarán en la sección
 
 ### **Struct**
 
-Estos son tipos compuestos definidos por el programador. Para su declaración de estos se puede realizar de la siguiente manera:
+Estos son tipos compuestos definidos por el programador. Existen 2 tipos de Struct, aquellos que son **mutables** y los **inmutables**. Para la declaración de struct inmutables se realizar de la siguiente manera:
 
 ```julia
 struct NOMBRE_STRUCT
@@ -70,25 +71,7 @@ struct NOMBRE_STRUCT
 end
 ```
 
-Y para crear una variable con este tipo compuesto, se realiza de la siguiente manera:
-
-```julia
-ID = NOMBRE_STRUCT(LISTA_VALORES)
-```
-
-Los atributos de los Struct pueden ser utilizados como parte de cualquier expresión. Para acceder a los atributos de los Struct, se utiliza la notación `.`.
-
-```julia
-ID.ID
-```
-
-Hay que tomar en cuenta que existen 2 tipos de Struct. Aquellos Struct que son **inmutables** y los que son **mutables**. El anterior caso es la declaración de un Struct inmutable. Es decir que no acepta instrucciones de asignación en sus atributos, de la forma:
-
-```julia
-ID.ID = expresión
-```
-
-Para declarar un Struct mutable se realiza de la siguiente manera:
+Para declarar un Struct mutable se agrega la palabra reservada __mutable__:
 
 ```julia
 mutable struct NOMBRE_STRUCT
@@ -96,7 +79,11 @@ mutable struct NOMBRE_STRUCT
 end
 ```
 
-Este tipo de Struct si acepta asignaciones en sus atributos.
+Y para crear una variable con nuestro Struct, se escribe:
+
+```julia
+ID = NOMBRE_STRUCT(LISTA_VALORES)
+```
 
 En la sección de Structs se detallará más al respecto de estos.
 
@@ -126,13 +113,30 @@ print("El resultado de 2 + 2 es $(2 + 2)")  # Imprime El resultado de 2 + 2 es 4
 println("$a $(b[1])") # Imprime el valor de a y el valor de b[1]
 ```
 
+JOLC también tiene la opción de imprimir arreglos y struct. Por ejemplo:
+
+```julia
+    a = [0, 1, 2]
+    println(a)          # Imprime [0, 1, 2]
+    s = Hora(10, 30)
+    print(s)            # Imprime Hora(10, 30)
+```
+
 ### Asignaciones
 
 COLOCAR TEXTO DE ASIGNACIONES
 
 ### Llamada a funciones
 
-COLOCAR TEXTO DE LLAMADA A FUNCIONES
+Una llamada a función es como un desvío en el flujo de la ejecución. En lugar de pasar a la siguiente sentencia, el flujo salta al cuerpo de la función, ejecuta esta y regresa para continuar después de la llamada a la función.
+
+Para llamar a una función se realiza de la siguiente manera:
+
+```julia
+NOMBRE_FUNCION(LISTA_PARAMETROS)
+```
+
+Cuando se pasa un arreglo o struct como argumento de una función, en realidad se pasa una referencia de este. Por lo que cualquier cambio que se realice al parámetro, se podrá observar después de salir de la función.
 
 ### Distintas Funciones Nativas
 
