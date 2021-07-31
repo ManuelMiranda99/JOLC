@@ -138,7 +138,7 @@ Entre las operaciones con cadenas (strings) vamos a encontrar las siguientes:
 ### Operador ternario
 El operador ternario es utilizado cuando se necesita entre diferentes expresiones a travez de una condición
 ```
-(EXPRESIÓN RELACIONAL O LOGICA) ? RESULTADO SI ES VERDADERO : RESULTADO SU ES FALSO
+(EXPRESIÓN RELACIONAL O LOGICA) ? RESULTADO SI ES VERDADERO : RESULTADO SI ES FALSO
 ```
   
 ## Instrucciones
@@ -172,9 +172,32 @@ JOLC también tiene la opción de imprimir arreglos y struct. Por ejemplo:
     print(s);            # Imprime Hora(10, 30)
 ```
 
-### Asignaciones
+### Declaraciones y Asignaciones
 
-COLOCAR TEXTO DE ASIGNACIONES
+JOLC permite la declaración y asignación de variables, las variables no pueden cambiar su tipo de dato una vez definido
+
+- **Declaración:** JOLC permite declarar variables de dos maneras:
+```
+    ID = Expresión ::TIPO;
+    ó
+    ID = Expresión;
+```
+Notese que la expresión `::TIPO` es opcional.
+
+- **Asignación:** JOLC permite asignar valores a variables existentes de la siguiente manera:
+```
+    ID = Expresión;
+```
+- **Diferenciar entre variables globales y locales:**
+  Debido a que la sintaxis de JOLC en cuanto a su declaración y asignación de variables es la misma, en caso de que se quiera declarar una nueva variable dentro de un entorno utilizando un `ID` existente en el entorno global se debe declarar la siguiente instrucción:
+```
+  local LISTA_ID;
+```
+donde `LISTA_ID` se define como:
+```
+    ID,ID,...,ID
+```
+de esta manera se sabra que estos ID seran para variables locales del entorno
 
 ### Llamada a funciones
 
