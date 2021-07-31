@@ -33,6 +33,10 @@ Valores númericos enteros. Por ejemplo: `3`, `2`, `-1`, `-100`.
 
 Valores númericos con punto flotante. Por ejemplo: `3.1415`, `2.7182`, `0.5`.
 
+### **Bool***
+
+Los valores booleanos únicamente pueden ser `true` o `false`.
+
 ### **Char**
 
 Estos son literales de carateres, se definen con comillas simples. Por ejemplo: `'a'`, `'b'`, `'z'`.
@@ -83,10 +87,12 @@ Un ejemplo de creación de struct podría ser:
 
 ```julia
 struct Rectangulo
-    base;
+    base::Int64;
     altura;
 end;
 ```
+
+Noten que en los atributos pueden o no llevar tipo de dato.
 
 En la sección de _Structs_ se detallará más al respecto de estos.
 
@@ -166,6 +172,14 @@ function imprimirHola()
 end;
 ```
 
+Además, los parámetros de las funciones vendrán separadas por `,` y podrán o no llevar tipo de dato.
+
+```julia
+function sumar(num1::Int64, num2)
+    return num1 + num2;
+end;
+```
+
 Hay que tomar en cuenta que las variables y parámetros que se creen dentro de una función son locales, es decir que únicamente existen dentro de la función.
 
 Las funciones también pueden llamarse a sí mismas. Lo que permite una gran variedad de aplicaciones en estructuras de datos y algoritmos de ordenamiento.
@@ -176,7 +190,65 @@ COLOCAR TEXTO DE CONDICIONALES
 
 ### Loops
 
-COLOCAR TEXTO DE LOOPS
+JOLC cuenta con sentencias iterativas, lo que permite ejecutar repetidamente un bloque de sentencias. Existen 2 de estas, el ciclo `while` y el ciclo `for`.
+
+#### While
+
+La sentencia `while` sigue la siguiente estructura:
+
+```julia
+while CONDICION
+    LISTA_INSTRUCCIONES
+end;
+```
+
+Y se ejecutará hasta que la condición del while se vuelva __false__. De manera más formal, el flujo de un while es el siguiente:
+
+1. Se determina si la condición es __true__ o __false__.
+2. Si es __false__, se sale de la sentencia `while` y continúa la ejecución con la siguiente sentencia.
+3. Si es __true__, ejecuta cada una de las sentencias en la lista de instrucciones.
+
+#### For
+
+La sentencia `for` en JOLC puede iterar sobre tipos que son iterables. Como lo son rangos, Array, String.
+
+Sigue la siguente estructura:
+
+```julia
+for 
+```
+
+Algunos ejemplos de for en JOLC son:
+
+```julia
+for i in 1:4                # Únicamente se recorre ascendentemente
+    print(i, " ");          # Imprime 1 2 3 4
+end;
+
+for letra in "Hola Mundo!"  # Puede ser también una variable de tipo String
+    print(letra, "-");      # Imprime H-o-l-a- -M-u-n-d-o-!-
+end;
+
+for animal in ["perro", "gato", "tortuga"]
+    println("$animal es mi favorito");
+    #=
+        Imprime:
+            perro es mi favorito
+            gato es mi favorito
+            tortuga es mi favorito
+    =#
+end;
+```
+
+Hay que tomar en cuenta en los arreglos que también puede ser un rango de algún arreglo. Por ejemplo:
+
+```julia
+for it in a[begin:end]
+    # Haz algo
+end;
+```
+
+Dentro de los ciclos también existen las sentencias de control `break` y `continue`. Las cuales, una termina el bucle y la otra regresa al inicio del bucle ignorando las sentencias faltantes.
 
 ### Arreglos
 
