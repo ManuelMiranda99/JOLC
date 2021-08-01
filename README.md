@@ -4,7 +4,25 @@ Julia es un lenguaje de programación bastante reciente que le interesa a cient�
 
 A continuación se detalla la sintaxis que tendrá JOLC. Además de algunos archivos de entrada de prueba que podrán probar para familiarizarse con la sintaxis.
 
-## Comentarios
+# Tabla de Contenido
+1. [Comentarios](#comentarios)
+2. [Tipos](#tipos)
+3. [Expresiones](#expresiones)
+4. [Instrucciones](#instrucciones)
+    1. [Impresión](#impresion)
+    2. [Declaración y Asignación](#decyasi)
+    3. [Llamada a Funciones](#llamadas)
+    4. [Distintas Funciones Nativas](#nativas)
+    5. [Funciones](#funciones)
+    6. [Condicionales](#condicionales)
+    7. [Loops](#loops)
+        1. [While](#while)
+        2. [For](#for)
+    8. [Arreglos](#arrays)
+    9. [Structs](#struct)
+    10. [Plot](#struct)
+
+## Comentarios <a name="comentarios"></a>
 
 Los comentarios pueden ser:
 
@@ -21,7 +39,7 @@ Los comentarios pueden ser:
     =#
 ```
 
-## Tipos
+## Tipos <a name="tipos"></a>
 
 JOLC aceptará distintos tipos de datos con los que cuenta Julia. Entre ellos se aceptarán:
 
@@ -96,7 +114,7 @@ Noten que en los atributos pueden o no llevar tipo de dato.
 
 En la sección de _Structs_ se detallará más al respecto de estos.
 
-## Expresiones
+## Expresiones <a name="expresiones"></a>
 
 JOLC acepta operaciones aritmeticas, relacionales y logicas de la siguiente forma:
 
@@ -141,11 +159,11 @@ El operador ternario es utilizado cuando se necesita entre diferentes expresione
 (EXPRESIÓN RELACIONAL O LOGICA) ? RESULTADO SI ES VERDADERO : RESULTADO SI ES FALSO
 ```
   
-## Instrucciones
+## Instrucciones <a name="instrucciones"></a>
 
 JOLC contará con las siguientes instrucciones de Julia:
 
-### Impresión
+### Impresión <a name="impresion"></a>
 
 JOLC cuenta con 3 distintas instrucciones de imprimir.
 
@@ -172,7 +190,7 @@ JOLC también tiene la opción de imprimir arreglos y struct. Por ejemplo:
     print(s);            # Imprime Hora(10, 30)
 ```
 
-### Declaraciones y Asignaciones
+### Declaraciones y Asignaciones <a name="decyasi"></a>
 
 JOLC permite la declaración y asignación de variables, las variables no pueden cambiar su tipo de dato una vez definido
 
@@ -199,7 +217,7 @@ donde `LISTA_ID` se define como:
 ```
 de esta manera se sabra que estos ID seran para variables locales del entorno
 
-### Llamada a funciones
+### Llamada a funciones <a name="llamadas"></a>
 
 Una llamada a función es como un desvío en el flujo de la ejecución. En lugar de pasar a la siguiente sentencia, el flujo salta al cuerpo de la función, ejecuta esta y regresa para continuar después de la llamada a la función.
 
@@ -213,7 +231,7 @@ Los parámetros se separan por medio de `,` si la función cuenta con más de un
 
 Estas se pueden utilizar en expresiones, debido a que existen funciones que retornan un valor.
 
-### Distintas Funciones Nativas
+### Distintas Funciones Nativas <a name="nativas"></a>
 
 JOLC utiliza diversas funciones nativas para sus expresiones, estas son:
 - **Parse:** Toma una cadena y la convierte al tipo de numero que se le indice si es posible.
@@ -240,7 +258,7 @@ JOLC utiliza diversas funciones nativas para sus expresiones, estas son:
     typeof(Expresión)
 ```
 
-### Funciones
+### Funciones <a name="funciones"></a>
 
 Las funcioens son secuencias de sentencias que ejecuta una operación que nosotros deseamos. Cuando se crea una función se especifica su nombre y secuencia de sentencias. Luego, ya se puede llamar a estas usando su nombre y los parámetros solicitados. Se definen las funciones en JOLC así:
 
@@ -271,7 +289,7 @@ Hay que tomar en cuenta que las variables y parámetros que se creen dentro de u
 
 Las funciones también pueden llamarse a sí mismas. Lo que permite una gran variedad de aplicaciones en estructuras de datos y algoritmos de ordenamiento.
 
-### Condicionales
+### Condicionales <a name="condicionales"></a>
 
 JOLC cuenta con sentencias condicionales, lo que permite que un bloque de codigo pueda ser o no ejecutado. Estas se definen por `if`,`if...else` y `if...elseif`. Su estructura es la siguiente:
 ```julia
@@ -288,11 +306,11 @@ else
 end;
 ```
 
-### Loops
+### Loops <a name="loops"></a>
 
 JOLC cuenta con sentencias iterativas, lo que permite ejecutar repetidamente un bloque de sentencias. Existen 2 de estas, el ciclo `while` y el ciclo `for`.
 
-#### While
+#### While <a name="while"></a>
 
 La sentencia `while` sigue la siguiente estructura:
 
@@ -308,14 +326,16 @@ Y se ejecutará hasta que la condición del while se vuelva __false__. De manera
 2. Si es __false__, se sale de la sentencia `while` y continúa la ejecución con la siguiente sentencia.
 3. Si es __true__, ejecuta cada una de las sentencias en la lista de instrucciones.
 
-#### For
+#### For <a name="for"></a>
 
 La sentencia `for` en JOLC puede iterar sobre tipos que son iterables. Como lo son rangos, Array, String.
 
 Sigue la siguente estructura:
 
 ```julia
-for 
+for ID in (RANGO | STRING | ARRAY)
+    LISTA_INSTRUCCIONES
+end;
 ```
 
 Algunos ejemplos de for en JOLC son:
@@ -350,11 +370,11 @@ end;
 
 Dentro de los ciclos también existen las sentencias de control `break` y `continue`. Las cuales, una termina el bucle y la otra regresa al inicio del bucle ignorando las sentencias faltantes.
 
-### Arreglos
+### Arreglos <a name="arrays"></a>
 
 COLOCAR TEXTO DE ARREGLOS
 
-### Structs
+### Structs <a name="struct"></a>
 
 Como se menciono en secciones anteriores, JOLC cuenta con tipos compuestos que los desarrolladores podrán definir mediante una sintaxis. Existen de tipo mutables e inmutables, con una diferencia bastante importante. Para la declaración de estos se utiliza la siguiente sintaxis:
 
@@ -419,6 +439,6 @@ Hay que tomar en cuenta de que si la estructura fuera de tipo inmutable, esta mo
 
 También, se debe de tomar en cuenta que los Struct se pueden utilizar como retorno de una función.
 
-### Plot
+### Plot <a name="plot"></a>
 
 COLOCAR TEXTO DE PLOT
