@@ -20,7 +20,7 @@ A continuación se detalla la sintaxis que tendrá JOLC. Además de algunos arch
         1. [While](#while)
         2. [For](#for)
     8. [Arreglos](#arrays)
-    9. [Structs](#struct)
+    9. [Structs](#structs)
     10. [Plot](#plot)
 
 ## Comentarios <a name="comentarios"></a>
@@ -375,7 +375,7 @@ Dentro de los ciclos también existen las sentencias de control `break` y `conti
 
 COLOCAR TEXTO DE ARREGLOS
 
-### Structs <a name="struct"></a>
+### Structs <a name="structs"></a>
 
 Como se menciono en secciones anteriores, JOLC cuenta con tipos compuestos que los desarrolladores podrán definir mediante una sintaxis. Existen de tipo mutables e inmutables, con una diferencia bastante importante. Para la declaración de estos se utiliza la siguiente sintaxis:
 
