@@ -4,7 +4,8 @@ Julia es un lenguaje de programación bastante reciente que le interesa a cient�
 
 A continuación se detalla la sintaxis que tendrá JOLC. Además de algunos archivos de entrada de prueba que podrán probar para familiarizarse con la sintaxis.
 
-# Tabla de Contenido
+## Tabla de Contenido
+
 1. [Comentarios](#comentarios)
 2. [Tipos](#tipos)
 3. [Expresiones](#expresiones)
@@ -20,7 +21,7 @@ A continuación se detalla la sintaxis que tendrá JOLC. Además de algunos arch
         2. [For](#for)
     8. [Arreglos](#arrays)
     9. [Structs](#struct)
-    10. [Plot](#struct)
+    10. [Plot](#plot)
 
 ## Comentarios <a name="comentarios"></a>
 
