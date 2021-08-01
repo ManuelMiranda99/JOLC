@@ -356,7 +356,68 @@ COLOCAR TEXTO DE ARREGLOS
 
 ### Structs
 
-COLOCAR TEXTO DE STRUCTS
+Como se menciono en secciones anteriores, JOLC cuenta con tipos compuestos que los desarrolladores podrán definir mediante una sintaxis. Existen de tipo mutables e inmutables, con una diferencia bastante importante. Para la declaración de estos se utiliza la siguiente sintaxis:
+
+```julia
+# Struct mutable
+struct NOMBRE_STRUCT
+    LISTA_ATRIBUTOS
+end;
+
+# Struct inmutable
+mutable struct NOMBRE_STRUCT
+    LISTA_ATRIBUTOS
+end;
+```
+
+Y para la creación de variables con nuestro Struct, ya sea mutable e inmutable:
+
+```julia
+ID = NOMBRE_STRUCT(LISTA_VALORES);
+```
+
+Siendo los valores los correspondientes a sus atributos en la lista de atributos.
+
+Los atributos de los Struct pueden ser utilizados como parte de cualquier expresión. Para acceder a los atributos de los Struct, se utiliza la notación `.`.
+
+```julia
+ID.ID
+```
+
+También si nosotros deseamos modificar únicamente uno de los atributos de nuestro Struct, ahí es donde entra la importancia de los dos tipos de Struct en JOLC. Los Struct que son inmutables no aceptan instrucciones de asignación en sus atributos, no se les puede cambiar el valor. En cambio, los Struct mutables si aceptan este tipo de instrucciones.
+
+```julia
+# Suponiendo que X es una variable Struct inmutable
+X.atributo = expresión
+ERROR !!! No se puede cambiar Struct inmutable
+
+# Suponiendo que Y es una variable Struct mutable
+Y.atributo = expresión
+```
+
+Otros aspectos importantes de los Structs es que estos pueden ser llamados como parámetros en las funciones y, al igual que los arreglos, se pasan por referencia. Por lo que el valor de los atributos de los Structs también cambia. Por ejemplo:
+
+```julia
+mutable struct Estructura
+    x;
+end;
+
+function cambiarAtributo(s)
+    s.x = 10;
+end;
+
+a = Estructura(0);
+println(a);             # Imprime 'Estructura(0)'
+println(a.x);           # Imprime 0
+
+cambiarAtributo(a);
+println(a);             # Imprime 'Estructura(10)'
+println(a.x);           # Imprime 10
+```
+
+Hay que tomar en cuenta de que si la estructura fuera de tipo inmutable, esta mostraría un error por la asignación.
+
+También, se debe de tomar en cuenta que los Struct se pueden utilizar como retorno de una función.
 
 ### Plot
 
