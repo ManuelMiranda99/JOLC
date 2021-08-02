@@ -128,7 +128,7 @@ Entre las operaciones aritmeticas disponibles vamos a encontrar las siguientes:
 - **Potencia:** La potenciación de una expresión se define por el símbolo `^` 
 - **Nativas:** JOLC posee 6 funciones nativas para la resolución de expresiones, entre ellas se encuentran:
   - **log10:** Resuelve el logaritmo de base 10 del numero que se ingrese
-  -  **log:**  Recibe como paramtro la base y el numero dl cual se desea obtener el logaritmo con la base especificada. Ejemplo: `log(2,4)`
+  -  **log:**  Recibe como parametro la base y el numero del cual se desea obtener el logaritmo con la base especificada. Ejemplo: `log(2,4)`
   - **sin:** Resuelve la función seno del numero que se ingrese
   - **cos:** Resuelve la función coseno del numero que se ingrese
   - **tan:** Resuelve la función tangente del numero que se ingrese
@@ -384,7 +384,53 @@ Dentro de los ciclos también existen las sentencias de control `break` y `conti
 
 ### Arreglos <a name="arrays"></a>
 
-COLOCAR TEXTO DE ARREGLOS
+Como se a mencionado JOLC cuenta con arreglos, los cuales pueden ser definidos mediante una sintaxis. Los valores de los arreglos pueden ser de cualquier tipo.
+```julia
+[8,true,"JOLC",[1,2,3]]
+``` 
+Para acceder a una posición en especifico del arreglo, se debe definir una expresión que de como resultado un numero entero dentro de corchetes. los indices en JOLC inician desde el numero 1 en adelante.
+```julia
+arr = ["H","O","L","A"];
+print(arr[1]) #H
+```
+JOLC tambien permite que se acceda a una porción de un arreglo, esto se define mediante la sintaxis `begin:end`, el cual debe ir dentro de corchetes y devolvera un arreglo con los limites establecidos. Se debe tomar en cuenta que las palabras `begin` y `end` pueden ser utilizadas para indicar el inicio y el final del arreglo respectivamente
+```julia
+arr = [1,2,3,4,5,6];
+print(arr[2:4]); #[2,3,4]
+
+print(arr[begin:4]) #[1,2,3,4]
+print(arr[4:end]) #[4,5,6]
+``` 
+#### **Copiar un arreglo:**
+JOLC permite crear una copia de un arreglo utilizando el símbolo `:`, como los arreglos son mutables, es útil hacer una copia antes de realizar operaciones que las modifiquen.
+```julia
+arr = [1,2,3,4,5,6];
+arr2 = arr[:];
+
+arr[2] = 0;
+
+print(arr) #[1,0,3,4,5,6]
+print(arr2) #[1,2,3,4,5,6]
+``` 
+#### **Funciones nativas con arreglos:**
+JOLC cuenta con 2 funciones nativas con arreglos, en los que podemos encontrar:
+- **Push:** inserta un nuevo valor al final del arreglo, se define como:
+```julia
+push!(nombre_arreglo,expreción);
+```
+- **Pop:** elimina y devuelve el ultimo valor del un arreglo, se define como:
+```julia
+pop!(nombre_arreglo,expreción);
+```
+
+#### **Operador punto con arreglos:**
+JOLC permite la utilización del operador punto (`.`) para realizar diferentes operaciones aritmeticas, trigonometricas y relaciones sobre cada valor en un arreglo.
+```julia
+arr = [1,2,3];
+print(arr.*2) #[2,4,6]
+
+arr2 = sin.(arr) #[0.8415, 0.9093, 0.1411]
+```
 
 ### Structs <a name="structs"></a>
 
