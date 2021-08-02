@@ -421,9 +421,13 @@ JOLC cuenta con 2 funciones nativas con arreglos, en los que podemos encontrar:
 ```julia
 push!(nombre_arreglo,expresión);
 ```
-- **Pop:** elimina y devuelve el ultimo valor del un arreglo, se define como:
+- **Pop:** elimina y devuelve el ultimo valor de un arreglo, se define como:
 ```julia
 pop!(nombre_arreglo,expresión);
+```
+**Length:** La obtención del tamaño de un arreglo, se define como:
+```julia
+length(arreglo)
 ```
 
 #### **Operador punto con arreglos:**
