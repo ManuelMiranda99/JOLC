@@ -54,7 +54,7 @@ Valores numéricos enteros. Por ejemplo: `3`, `2`, `-1`, `-100`.
 
 Valores númericos con punto flotante. Por ejemplo: `3.1415`, `2.7182`, `0.5`.
 
-### **Bool***
+### **Bool**
 
 Los valores booleanos únicamente pueden ser `true` o `false`.
 
@@ -66,7 +66,7 @@ Estos son literales de carateres, se definen con comillas simples. Por ejemplo: 
 
 Estos representan cadenas de texto, se definen con comillas dobles. Por ejemplo: `"Hola"`, `"Mundo"`, `"!"`.
 
-Los Strings también cuentan con operaciones especiales que se pueden realizar con estos. Se detalla más adelante en la sección de _Expresiones_.
+Los Strings también cuentan con operaciones especiales que se pueden realizar con estos. Se detalla más adelante en la sección de [_Expresiones_](#expresiones).
 
 ### **Arreglos**
 
@@ -78,7 +78,7 @@ Estos son un conjunto de valores indexados entre 1 hasta n, que pueden ser de di
 ['a', 2.0, 5, ["Hola", "Mundo"]].
 ```
 
-Los arreglos cuentan con distintas operaciones que se detallarán en la sección de _Arreglos_.
+Los arreglos cuentan con distintas operaciones que se detallarán en la sección de [_Arreglos_](#arrays).
 
 ### **Struct**
 
@@ -115,7 +115,7 @@ end;
 
 Noten que en los atributos pueden o no llevar tipo de dato.
 
-En la sección de _Structs_ se detallará más al respecto de estos.
+En la sección de [_Structs_](#structs) se detallará más al respecto de estos.
 
 ## Expresiones <a name="expresiones"></a>
 
@@ -241,9 +241,9 @@ Para llamar a una función se realiza de la siguiente manera:
 NOMBRE_FUNCION(LISTA_PARAMETROS);
 ```
 
-Los parámetros se separan por medio de `,` si la función cuenta con más de un parámetro. Cuando se pasa un arreglo o struct como argumento de una función, en realidad se pasa una referencia de este. Por lo que cualquier cambio que se realice al parámetro, se podrá observar después de salir de la función.
+Si la función cuenta con más de un parámetro estos se separan por medio de `,`. Además es importante tener en cuenta que cuando se pasa un arreglo o struct como argumento de una función, en realidad se pasa una referencia de este. Por lo que cualquier cambio que se realice al parámetro, se podrá observar después de salir de la función.
 
-Estas se pueden utilizar en expresiones, debido a que existen funciones que retornan un valor.
+Las llamadas a funciones también se pueden utilizar en expresiones, debido a que existen funciones que retornan un valor.
 
 ### Distintas Funciones Nativas <a name="nativas"></a>
 
@@ -426,7 +426,7 @@ pop!(nombre_arreglo,expresión);
 ```
 
 #### **Operador punto con arreglos:**
-JOLC permite la utilización del operador punto (`.`) para realizar diferentes operaciones aritmeticas, trigonometricas y relaciones sobre cada valor en un arreglo.
+JOLC permite la utilización del operador punto (`.`) para realizar diferentes operaciones aritmeticas, trigonometricas, relaciones o cualquier otro tipo de función sobre cada valor en un arreglo.
 ```julia
 arr = [1,2,3];
 print(arr.*2) #[2,4,6]
@@ -439,12 +439,12 @@ arr2 = sin.(arr) #[0.8415, 0.9093, 0.1411]
 Como se menciono en secciones anteriores, JOLC cuenta con tipos compuestos que los desarrolladores podrán definir mediante una sintaxis. Existen de tipo mutables e inmutables, con una diferencia bastante importante. Para la declaración de estos se utiliza la siguiente sintaxis:
 
 ```julia
-# Struct mutable
+# Struct inmutable
 struct NOMBRE_STRUCT
     LISTA_ATRIBUTOS
 end;
 
-# Struct inmutable
+# Struct mutable
 mutable struct NOMBRE_STRUCT
     LISTA_ATRIBUTOS
 end;
@@ -497,11 +497,12 @@ println(a.x);           # Imprime 10
 
 Hay que tomar en cuenta de que si la estructura fuera de tipo inmutable, esta mostraría un error por la asignación.
 
-También, se debe de tomar en cuenta que los Struct se pueden utilizar como retorno de una función.
+Se debe de tomar en cuenta que los Struct se pueden utilizar como retorno de una función.
 
 ### Plot <a name="plot"></a>
 
 JOLC tiene la caracteristica de poder crear graficas 2D, esto se lleva acabo con la función `plot`. La cual recibe 3 parametros:
+
 - Nombre de la gráfica - string
 - Valores en X - arreglo de números
 - Valores en Y - arreglo de números
