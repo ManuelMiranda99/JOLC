@@ -44,6 +44,8 @@ Los comentarios pueden ser:
 
 JOLC aceptará distintos tipos de datos con los que cuenta Julia. Entre ellos se aceptarán:
 
+### **Nulo:**
+Se representa con la palabra reservada `Nothing`, la cual indica que no existe ningún valor.
 ### **Int64**
 
 Valores numéricos enteros. Por ejemplo: `3`, `2`, `-1`, `-100`.
