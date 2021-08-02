@@ -107,6 +107,17 @@ Entre las operaciones aritmeticas disponibles vamos a encontrar las siguientes:
 - **Multiplicación:** La multiplicación de dos expresiones se define por el símbolo `*` 
 - **División:** La división de dos expresiones se define por el símbolo `/` 
 - **Potencia:** La potenciación de una expresión se define por el símbolo `^` 
+- **Nativas:** JOLC posee 6 funciones nativas para la resolución de expresiones, entre ellas se encuentran:
+  - **log10:** Resuelve el logaritmo de base 10 del numero que se ingrese
+  -  **log:**  Recibe como paramtro la base y el numero dl cual se desea obtener el logaritmo con la base especificada. Ejemplo: `log(2,4)`
+  - **sin:** Resuelve la función seno del numero que se ingrese
+  - **cos:** Resuelve la función coseno del numero que se ingrese
+  - **tan:** Resuelve la función tangente del numero que se ingrese
+  - **sqrt:** Resuelve la raiz cuadrada del numero que se ingrese
+```julia
+    #Se expresa de la siguiente manera:
+    FUNCION_NATIVA(Expresión)
+```
 ### Relacionales
 Entre las operaciones relacionales disponibles vamos a encontrar las siguientes:
 - **Igualdad:** Esta se define por el símbolo `==`
