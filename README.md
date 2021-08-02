@@ -126,7 +126,8 @@ Entre las operaciones aritmeticas disponibles vamos a encontrar las siguientes:
 - **Suma:** La suma de dos expresiones se define por el símbolo `+` 
 - **Resta:** La resta de dos expresiones y la negación de una expresión aritmetica se define por el símbolo `-` 
 - **Multiplicación:** La multiplicación de dos expresiones se define por el símbolo `*` 
-- **División:** La división de dos expresiones se define por el símbolo `/` 
+- **División:** La división de dos expresiones se define por el símbolo `/`
+- **Modulo:** El modulo entre dos expresiones se define por el símbolo `%`  
 - **Potencia:** La potenciación de una expresión se define por el símbolo `^` 
 - **Nativas:** JOLC posee 6 funciones nativas para la resolución de expresiones, entre ellas se encuentran:
   - **log10:** Resuelve el logaritmo de base 10 del numero que se ingrese
