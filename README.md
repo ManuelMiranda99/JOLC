@@ -2,7 +2,7 @@
 
 Julia es un lenguaje de programación bastante reciente que le interesa a científicos de datos, estadísticos y analistas financieros. Este cuenta con distintas características atractivas para los programadores. Aún así, Julia al ser un lenguaje de programación bastante reciente, hay muy pocos lugares donde se pueda probar su sintaxis de manera sencilla. Es por eso que se desarrollo JOLC, un lenguaje de programación basado en Julia que se podrá programar desde el navegador.
 
-A continuación se detalla la sintaxis que tendrá JOLC. Además de algunos archivos de entrada de prueba que podrán probar para familiarizarse con la sintaxis.
+A continuación, se detalla la sintaxis que tendrá JOLC. Además de algunos archivos de entrada de prueba que podrán probar para familiarizarse con la sintaxis.
 
 ## Tabla de Contenido
 
@@ -27,16 +27,16 @@ A continuación se detalla la sintaxis que tendrá JOLC. Además de algunos arch
 
 Los comentarios pueden ser:
 
-- Una linea (#)
-- Multiples lineas (#= ... =#)
+- Una línea (#)
+- Múltiples líneas (#= ... =#)
 
 ```julia
-    # Esto es un comentario de una sola linea
+    # Esto es un comentario de una sola línea
 
     #=
         Esto es un
         comentario de
-        multiples lineas
+        múltiples líneas
     =#
 ```
 
@@ -46,7 +46,7 @@ JOLC aceptará distintos tipos de datos con los que cuenta Julia. Entre ellos se
 
 ### **Int64**
 
-Valores númericos enteros. Por ejemplo: `3`, `2`, `-1`, `-100`.
+Valores numéricos enteros. Por ejemplo: `3`, `2`, `-1`, `-100`.
 
 ### **Float64**
 
@@ -129,7 +129,7 @@ Entre las operaciones aritmeticas disponibles vamos a encontrar las siguientes:
 - **Nativas:** JOLC posee 6 funciones nativas para la resolución de expresiones, entre ellas se encuentran:
   - **log10:** Resuelve el logaritmo de base 10 del numero que se ingrese
   -  **log:**  Recibe como parametro la base y el numero del cual se desea obtener el logaritmo con la base especificada. Ejemplo: `log(2,4)`
-  - **sin:** Resuelve la función seno del numero que se ingrese
+  - **sin:** Resuelve la función seno del número que se ingrese
   - **cos:** Resuelve la función coseno del numero que se ingrese
   - **tan:** Resuelve la función tangente del numero que se ingrese
   - **sqrt:** Resuelve la raiz cuadrada del numero que se ingrese
@@ -212,7 +212,7 @@ JOLC permite la declaración y asignación de variables, las variables no pueden
     ó
     ID = Expresión;
 ```
-Notese que la expresión `::TIPO` es opcional.
+Nótese que la expresión `::TIPO` es opcional.
 
 - **Asignación:** JOLC permite asignar valores a variables existentes de la siguiente manera:
 ```julia
@@ -342,7 +342,7 @@ Y se ejecutará hasta que la condición del while se vuelva __false__. De manera
 
 La sentencia `for` en JOLC puede iterar sobre tipos que son iterables. Como lo son rangos, Array, String.
 
-Sigue la siguente estructura:
+Sigue la siguiente estructura:
 
 ```julia
 for ID in (RANGO | STRING | ARRAY)
@@ -388,7 +388,7 @@ Como se a mencionado JOLC cuenta con arreglos, los cuales pueden ser definidos m
 ```julia
 [8,true,"JOLC",[1,2,3]]
 ``` 
-Para acceder a una posición en especifico del arreglo, se debe definir una expresión que de como resultado un numero entero dentro de corchetes. los indices en JOLC inician desde el numero 1 en adelante.
+Para acceder a una posición en específico del arreglo, se debe definir una expresión que de como resultado un numero entero dentro de corchetes. los indices en JOLC inician desde el numero 1 en adelante.
 ```julia
 arr = ["H","O","L","A"];
 print(arr[1]) #H
@@ -416,11 +416,11 @@ print(arr2) #[1,2,3,4,5,6]
 JOLC cuenta con 2 funciones nativas con arreglos, en los que podemos encontrar:
 - **Push:** inserta un nuevo valor al final del arreglo, se define como:
 ```julia
-push!(nombre_arreglo,expreción);
+push!(nombre_arreglo,expresión);
 ```
 - **Pop:** elimina y devuelve el ultimo valor del un arreglo, se define como:
 ```julia
-pop!(nombre_arreglo,expreción);
+pop!(nombre_arreglo,expresión);
 ```
 
 #### **Operador punto con arreglos:**
@@ -499,4 +499,12 @@ También, se debe de tomar en cuenta que los Struct se pueden utilizar como reto
 
 ### Plot <a name="plot"></a>
 
-COLOCAR TEXTO DE PLOT
+JOLC tiene la caracteristica de poder crear graficas 2D, esto se lleva acabo con la función `plot`. La cual recibe 3 parametros:
+- Nombre de la gráfica - string
+- Valores en X - arreglo de números
+- Valores en Y - arreglo de números
+
+Los arreglos deben ser del mismo tamaño y cada elemento debe ser numerico
+```
+plot("Nombre gráfica",[1,2,3],[1,2,3]);
+```
