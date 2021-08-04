@@ -1,10 +1,3 @@
-#=
-    En el archivo de expresiones básicas se colocarán las siguientes operaciones:
-        Suma, Resta, Multiplicación, División, Potencia, Módulo
-        Booleanas
-        Lógicas
-    Utilizando distintos tipos como: entero, float, Bool
-=#
 println("Probando expresiones Arítmeticas");
 
 println(-25^(69-33*2)+22-32*2-33^(-48+48));   # -15668

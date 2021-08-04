@@ -1,14 +1,3 @@
-#=
-    Dentro del archivo de arreglos se encontrarán todas las instrucciones disponibles
-    para los arreglos. Aceptando las siguientes instrucciones:
-        acceso a rango o posición
-        copia de un arreglo
-        push!
-        pop!
-        length()
-        Operador punto
-=#
-
 function swap(i::Int64,j::Int64,arr) 
     temp = arr[i];
     arr[i] = arr[j];
