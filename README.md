@@ -21,7 +21,6 @@ A continuación, se detalla la sintaxis que tendrá JOLC. Además de algunos arc
         2. [For](#for)
     8. [Arreglos](#arrays)
     9. [Structs](#structs)
-    10. [Plot](#plot)
 
 ## Comentarios <a name="comentarios"></a>
 
@@ -138,7 +137,11 @@ Entre las operaciones aritmeticas disponibles vamos a encontrar las siguientes:
   - **sqrt:** Resuelve la raiz cuadrada del numero que se ingrese
 ```julia
     #Se expresa de la siguiente manera:
-    FUNCION_NATIVA(Expresión)
+    sin(134)
+    log10(100)
+    cos(var1)
+    tan(12)
+    sqrt(16)
 ```
 ### Relacionales
 Entre las operaciones relacionales disponibles vamos a encontrar las siguientes:
@@ -158,25 +161,54 @@ Entre las operaciones lógicas disponibles vamos a encontrar las siguientes:
 ### Cadenas
 Entre las operaciones con cadenas (strings) vamos a encontrar las siguientes:
 - **Concatenación:** La unión de dos cadenas de texto se define por el símbolo `*`
+  ```julia
+  "para" * "caidismo" = "paracaidismo"
+  ```
 - **Repetición:** Permite que una cadena de texto se repita cierto número de veces, esta se define por el símbolo `^`
   ```julia
   "Cadena"^3 = "CadenaCadenaCadena"
   ```
 - **Acceso a una pocisión:** El acceso a un elemento de una cadena se define de la siguiente manera: `string[posición]`, el cual devolvera el caracter correspondiente a esa posición
-- **Acceso a una porción:** El acceso a una porción de una cadena se define de la siguiente manera: `string[inicial:final]`, el cual devolvera la cadena correspondiente al intervalo definido
+    ```julia
+    animal = "Tigre";
+    println(animal[2]); #i
+    ```
+- **Acceso a una porción:** El acceso a una porción de una cadena se define de la siguiente manera: `string[inicial:final]`, el cual devolvera la cadena correspondiente al intervalo definido.
+    ```julia
+    animal = "Tigre";
+    println(animal[2:4]); #igr
+    ```
 - **Tamaño de una cadena:** La obtención del número de elementos de una cadena se define por la función `length(cadena)`
+    ```julia
+    animal = "Tigre";
+    println(length(animal)); #5
+    ```
 - **Cadena en mayusculas:** Una cadena puede ser convertida a mayusculas con la utilización de la función `uppercase(cadena)`
+    ```julia
+    animal = "Tigre";
+    println(uppercase(animal)); #TIGRE
+    ```
 - **Cadena en minusculas:** Una cadena puede ser convertida a mayusculas con la utilización de la función `lowercase(cadena)`
+    ```julia
+    animal = "Tigre";
+    println(lowercase(animal)); #tigre
+    ```
 
 ### Operador ternario
 El operador ternario es utilizado cuando se necesita entre diferentes expresiones a travez de una condición
 ```julia
 (EXPRESIÓN RELACIONAL O LOGICA) ? RESULTADO SI ES VERDADERO : RESULTADO SI ES FALSO
 ```
+Ejemplo:
+```julia
+respuesta = edad >= 50 ? "Puede vacunarse" : "No puede vacunarse";
+
+println(animal == "Perro" ? 15 : 10);
+```
   
 ## Instrucciones <a name="instrucciones"></a>
 
-JOLC contará con las siguientes instrucciones de Julia:
+JOLC contará con varias instrucciones para su ejecución, cada instrucción debe terminar con un punto y coma (`;`). Las instrucciones que JOLC acepta son:
 
 ### Impresión <a name="impresion"></a>
 
@@ -215,11 +247,23 @@ JOLC permite la declaración y asignación de variables, las variables no pueden
     ó
     ID = Expresión;
 ```
+Ejemplo:
+```julia
+    x = (3*5)::Int64;
+    y = (10/4)::Float64;
+    str = "Saludo"::String;
+    var1 = true;
+```
 Nótese que la expresión `::TIPO` es opcional.
 
 - **Asignación:** JOLC permite asignar valores a variables existentes de la siguiente manera:
 ```julia
     ID = Expresión;
+```
+Ejemplo:
+```julia
+    var1 = "Adios";
+    v = 89 - 9;
 ```
 - **Diferenciar entre variables globales y locales:**
   Debido a que la sintaxis de JOLC en cuanto a su declaración y asignación de variables es la misma, en caso de que se quiera declarar una nueva variable dentro de un entorno utilizando un `ID` existente en el entorno global se debe declarar la siguiente instrucción:
@@ -229,6 +273,15 @@ Nótese que la expresión `::TIPO` es opcional.
 donde `LISTA_ID` se define como:
 ```julia
     ID,ID,...,ID
+```
+Ejemplo:
+```julia
+    local x,y,str,var1;
+
+    x = (3*5)::Int64;
+    y = (10/4)::Float64;
+    str = "Saludo"::String;
+    var1 = true;
 ```
 de esta manera se sabra que estos ID seran para variables locales del entorno
 
@@ -240,6 +293,12 @@ Para llamar a una función se realiza de la siguiente manera:
 
 ```julia
 NOMBRE_FUNCION(LISTA_PARAMETROS);
+```
+Ejemplo:
+```julia
+ordenamiento(arr1,arr2);
+imprimirLista(lista);
+nuevaLinea();
 ```
 
 Si la función cuenta con más de un parámetro estos se separan por medio de `,`. Además es importante tener en cuenta que cuando se pasa un arreglo o struct como argumento de una función, en realidad se pasa una referencia de este. Por lo que cualquier cambio que se realice al parámetro, se podrá observar después de salir de la función.
@@ -270,7 +329,7 @@ JOLC utiliza diversas funciones nativas para sus expresiones, estas son:
 ```
 - **typeof:** Muestra el tipo del argumento
 ```julia
-    typeof(Expresión)
+    typeof(5 * 5) #Int64
 ```
 
 ### Funciones <a name="funciones"></a>
@@ -320,7 +379,23 @@ else
     LISTA_INTRUCCIONES
 end;
 ```
+Ejemplo:
+```julia
+if x == 8
+    var1 = (x + 8)::Int64;
+    println(sqrt(var1));
+end;
 
+if x == 8
+    var1 = (x + 8)::Int64;
+    println(sqrt(var1));
+elseif x < 8
+    var1 = (x/3)::Float64;
+    println(sin(var1));
+else
+    println("Error");
+end;
+```
 ### Loops <a name="loops"></a>
 
 JOLC cuenta con sentencias iterativas, lo que permite ejecutar repetidamente un bloque de sentencias. Existen 2 de estas, el ciclo `while` y el ciclo `for`.
@@ -332,6 +407,13 @@ La sentencia `while` sigue la siguiente estructura:
 ```julia
 while CONDICION
     LISTA_INSTRUCCIONES
+end;
+```
+Ejemplo:
+```julia
+while var1 < 10
+    println(var1);
+    var1 = var1 + 1;
 end;
 ```
 
@@ -421,13 +503,28 @@ JOLC cuenta con 2 funciones nativas con arreglos, en los que podemos encontrar:
 ```julia
 push!(nombre_arreglo,expresión);
 ```
+Ejemplo:
+```julia
+arr = [1,2,3,4,5,6];
+push!(arr,7); # arr = [1,2,3,4,5,6,7]
+```
 - **Pop:** elimina y devuelve el ultimo valor de un arreglo, se define como:
 ```julia
 pop!(nombre_arreglo,expresión);
 ```
+Ejemplo:
+```julia
+arr = [1,2,3,4,5,6];
+pop!(arr); # retorna 6, arr = [1,2,3,4,5]
+```
 **Length:** La obtención del tamaño de un arreglo, se define como:
 ```julia
 length(arreglo)
+```
+Ejemplo:
+```julia
+arr = [1,2,3,4,5,6];
+length(arr); # 6
 ```
 
 #### **Operador punto con arreglos:**
@@ -503,16 +600,3 @@ println(a.x);           # Imprime 10
 Hay que tomar en cuenta de que si la estructura fuera de tipo inmutable, esta mostraría un error por la asignación.
 
 Se debe de tomar en cuenta que los Struct se pueden utilizar como retorno de una función.
-
-### Plot <a name="plot"></a>
-
-JOLC tiene la caracteristica de poder crear graficas 2D, esto se lleva acabo con la función `plot`. La cual recibe 3 parametros:
-
-- Nombre de la gráfica - string
-- Valores en X - arreglo de números
-- Valores en Y - arreglo de números
-
-Los arreglos deben ser del mismo tamaño y cada elemento debe ser numerico
-```
-plot("Nombre gráfica",[1,2,3],[1,2,3]);
-```
