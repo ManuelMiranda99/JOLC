@@ -438,22 +438,31 @@ end;
 Algunos ejemplos de for en JOLC son:
 
 ```julia
-for i in 1:4                # Únicamente se recorre ascendentemente
-    print(i, " ");          # Imprime 1 2 3 4
+for i in 1:4                # Recorre rango de 1:4
+    print(i, " ");          # Únicamente se recorre ascendentemente
+end;                        # Imprime 1 2 3 4
+
+for letra in "Hola Mundo!"  # Recorre las letras de la cadena
+    print(letra, "-");      # Imprime H-o-l-a-M-u-n-d-o-!
 end;
 
-for letra in "Hola Mundo!"  # Puede ser también una variable de tipo String
-    print(letra, "-");      # Imprime H-o-l-a- -M-u-n-d-o-!-
+cadena = "OLC2";
+for letra in cadena
+    print(letra, "-");      # Imprime O-L-C-2
 end;
 
 for animal in ["perro", "gato", "tortuga"]
     println("$animal es mi favorito");
-    #=
-        Imprime:
-            perro es mi favorito
-            gato es mi favorito
-            tortuga es mi favorito
+    #= Imprime
+        perro es mi favorito
+        gato es mi favorito
+        tortuga es mi favorito
     =#
+end;
+
+arr = [1,2,3,4,5]
+for numero in arr[2:4]
+    print(numero, " ")      # Imprime 2 3 4
 end;
 ```
 
