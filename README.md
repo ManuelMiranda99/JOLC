@@ -239,7 +239,7 @@ JOLC también tiene la opción de imprimir arreglos y struct. Por ejemplo:
 
 ### Declaraciones y Asignaciones <a name="decyasi"></a>
 
-JOLC permite la declaración y asignación de variables, las variables no pueden cambiar su tipo de dato una vez definido
+JOLC permite la declaración y asignación de variables, las variables pueden cambiar su tipo de dato en cualquier momento
 
 - **Declaración:** JOLC permite declarar variables de dos maneras:
 ```julia
@@ -265,25 +265,33 @@ Ejemplo:
     var1 = "Adios";
     v = 89 - 9;
 ```
-- **Diferenciar entre variables globales y locales:**
-  Debido a que la sintaxis de JOLC en cuanto a su declaración y asignación de variables es la misma, en caso de que se quiera declarar una nueva variable dentro de un entorno utilizando un `ID` existente en el entorno global se debe declarar la siguiente instrucción:
-```julia
-  local LISTA_ID;
-```
-donde `LISTA_ID` se define como:
-```julia
-    ID,ID,...,ID
-```
-Ejemplo:
-```julia
-    local x,y,str,var1;
+- **global y local:**
+  JOLC permite definir el uso de variables globales o locales a travez de las palabras reservadas `global` y `local`, esto quiere decir que, si una variable es declara en el entorno global y se le quiere asignar un nuevo valor dentro de una función se debe de utilizar la palabra `global`:
+  ```julia
+  x = 8200::Int64;
 
-    x = (3*5)::Int64;
-    y = (10/4)::Float64;
-    str = "Saludo"::String;
-    var1 = true;
-```
-de esta manera se sabra que estos ID seran para variables locales del entorno
+  function suma(a,b)
+    global x = a + b;
+  end;
+  ```
+  Si dentro de un ciclo se busca crear una nueva  variable con un id igual a una variable en un entorno externo se usa la palabra `local`:
+  ```julia
+    x = 15::Int64;
+
+    function numero()
+
+        local x = 80; #local de la funcion
+        y = 0;
+        while (y < 10)
+            local x = 9; #local del ciclo
+            y = y + 1;
+            println(x) #9
+        end;
+        println(x) #80
+    end;
+    numero();
+    println(x) #15
+  ```
 
 ### Llamada a funciones <a name="llamadas"></a>
 
