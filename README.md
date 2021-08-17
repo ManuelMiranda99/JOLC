@@ -212,12 +212,11 @@ JOLC contará con varias instrucciones para su ejecución, cada instrucción deb
 
 ### Impresión <a name="impresion"></a>
 
-JOLC cuenta con 3 distintas instrucciones de imprimir.
+JOLC cuenta con 2 distintas instrucciones de imprimir.
 
 ```julia
 print(expresión);        # Esta imprime sin realizar un salto de línea
 println(expresión);      # Esta imprime realizando un salto de línea
-printTS();               # Esta muestra la tabla de símbolos en dónde fue llamada
 ```
 
 Para imprimir más de un valor por línea, se puede imprimir una secuencia de valores separados por comas. También dentro de las cadenas se pueden colocar cualquier expresión utilizando el operador `$`. Por ejemplo:
