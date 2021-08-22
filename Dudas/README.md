@@ -8,6 +8,8 @@ Dentro de este README pueden colocar sus dudas con respecto al proyecto. Todas e
 4. Subir sus cambios a Github.
 5. Crear un pull request en este repositorio. Colocar en sus Pull request al menos su número de carnet y sección.
 
+NOTA. De esta forma también pueden pedir que se suban archivos de entrada que ustedes estén utilizando.
+
 Para realizar su pregunta, seguir el siguiente formato:
 
 ### PREGUNTA ACÁ
