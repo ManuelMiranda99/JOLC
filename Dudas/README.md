@@ -20,3 +20,5 @@ Esto para tener un poco más ordenado y entendible este documento.
 
 ## SECCIÓN DE PREGUNTAS
 
+Pregunta de DiiAns23:
+  En la declaración de parámetros en las funciones se les debe de indicar el tipo de variable o simplemente podemos escribir el parámetro que recibe?
