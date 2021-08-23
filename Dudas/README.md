@@ -20,5 +20,6 @@ Esto para tener un poco más ordenado y entendible este documento.
 
 ## SECCIÓN DE PREGUNTAS
 
-Pregunta de DiiAns23:
+### Pregunta de DiiAns23:
   En la declaración de parámetros en las funciones se les debe de indicar el tipo de variable o simplemente podemos escribir el parámetro que recibe?
+  R// Para la declaración de parámetros es posible indicar el tipo del parámetro mediante ::TIPO. Puedes ver ejemplo de esto en el archivo de arreglos y struct.
