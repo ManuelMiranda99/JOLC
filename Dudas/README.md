@@ -20,6 +20,13 @@ Esto para tener un poco más ordenado y entendible este documento.
 
 ## SECCIÓN DE PREGUNTAS
 
+### Pregunta Welmann29
+Estaba viendo los archivos de prueba que subieron y observe un par de cosas que en el enunciado no se contemplan:
+1. El operador ternario nunca se menciona en el enunciado, sin embargo se puede observar en la linea 26 del archivo operaciones avanzadas.
+2. La funcion lenght solo se menciona para arreglos y no para strings, y se observa en la linea 20 del mismo archivo 
+3. La manera de acceder a los strings, en la linea 19 del mismo archivo, tampoco se menciona, y supongo la palabra begin y end son reservadas para acceder a los strings pero tampoco se mencionan
+Consulto si realmente son cosas que se les pasaron agregar y se deben implementar, o quizas fueron funcionalidades que se quitaron al final y no se deben implementar en el proyecto
+
 ### Pregunta de DiiAns23:
   En la declaración de parámetros en las funciones se les debe de indicar el tipo de variable o simplemente podemos escribir el parámetro que recibe?
   R// Para la declaración de parámetros es posible indicar el tipo del parámetro mediante ::TIPO. Puedes ver ejemplo de esto en el archivo de arreglos y struct.
