@@ -27,10 +27,10 @@ Estaba viendo los archivos de prueba que subieron y observe un par de cosas que 
 3. La manera de acceder a los strings, en la linea 19 del mismo archivo, tampoco se menciona, y supongo la palabra begin y end son reservadas para acceder a los strings pero tampoco se mencionan
 Consulto si realmente son cosas que se les pasaron agregar y se deben implementar, o quizas fueron funcionalidades que se quitaron al final y no se deben implementar en el proyecto
 
-**R//Muchas gracias por el reporte, ninguna de esas 3 operaciones se tomará en cuenta ya que no están en el enunciado. Se eliminarán de los archivos de ejemplo.**
+**R//** Muchas gracias por el reporte, ninguna de esas 3 operaciones se tomará en cuenta ya que no están en el enunciado. Se eliminarán de los archivos de ejemplo.
 
 
 ### Pregunta de DiiAns23:
   En la declaración de parámetros en las funciones se les debe de indicar el tipo de variable o simplemente podemos escribir el parámetro que recibe?
   
-  **R// Para la declaración de parámetros es posible indicar el tipo del parámetro mediante ::TIPO. Puedes ver ejemplo de esto en el archivo de arreglos y struct.**
+  **R//** Para la declaración de parámetros es posible indicar el tipo del parámetro mediante ::TIPO. Puedes ver ejemplo de esto en el archivo de arreglos y struct.
