@@ -14,8 +14,7 @@ Para realizar su pregunta, seguir el siguiente formato:
 
 ### PREGUNTA ACÁ
 
-ESPACIO DE RESPUESTA
-
+1. Estaba revisando las funciones Nativas que se indican en el proyecto, sin embargo no se aclara si los parámetros a recibir deben de ser en Radianes o en Grados.
 Esto para tener un poco más ordenado y entendible este documento.
 
 ## SECCIÓN DE PREGUNTAS
