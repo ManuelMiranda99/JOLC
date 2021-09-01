@@ -29,6 +29,10 @@ Consulto si realmente son cosas que se les pasaron agregar y se deben implementa
 
 **R//** Muchas gracias por el reporte, ninguna de esas 3 operaciones se tomará en cuenta ya que no están en el enunciado. Se eliminarán de los archivos de ejemplo.
 
+Que tal compañeros, nuevamente me disponia a probar el archivo de arreglos y nuevamente me tope con cosas no especificadas en el enunciado 
+1. La operacion punto en la cual se pueden operar todos lo contenido en un array, esto se observa de la linea 26 a la 30 del archivo arreglos 
+2. Las operaciones pop y push se preceden de un signo de exclamacion, en el enunciado no se muestra ningun ejemplo de esto, esto se hace de esta forma?
+
 
 ### Pregunta de DiiAns23:
   En la declaración de parámetros en las funciones se les debe de indicar el tipo de variable o simplemente podemos escribir el parámetro que recibe?
