@@ -33,6 +33,7 @@ Que tal compañeros, nuevamente me disponia a probar el archivo de arreglos y nu
 1. La operacion punto en la cual se pueden operar todos lo contenido en un array, esto se observa de la linea 26 a la 30 del archivo arreglos 
 2. Las operaciones pop y push se preceden de un signo de exclamacion, en el enunciado no se muestra ningun ejemplo de esto, esto se hace de esta forma?
 
+**R//** La operación punto se eliminará de los archivos de prueba. Para el punto 2, Julia realiza la operación de push y pop de la forma que se encuentra en los archivos de entrada. Como push!(ARREGLO, VALOR)
 
 ### Pregunta de DiiAns23:
   En la declaración de parámetros en las funciones se les debe de indicar el tipo de variable o simplemente podemos escribir el parámetro que recibe?
