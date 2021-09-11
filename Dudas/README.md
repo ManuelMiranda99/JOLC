@@ -43,5 +43,5 @@ Que tal compañeros, nuevamente me disponia a probar el archivo de arreglos y nu
 
 ### Pregunta de Danloa98
 
-  Que tal, en el apartado de funciones del enunciado en ninguna parte se especifica la forma en que establecemos los parametros, debemos ponerle el tipo? O cuál es la forma correcta de hacerlo. 
+  Que tal, en el apartado de funciones del enunciado en ninguna parte se especifica la forma en que establecemos los parametros, debemos ponerle el tipo? O cuál es la forma correcta de hacerlo
   
