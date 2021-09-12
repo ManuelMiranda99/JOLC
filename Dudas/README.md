@@ -39,3 +39,9 @@ Que tal compañeros, nuevamente me disponia a probar el archivo de arreglos y nu
   En la declaración de parámetros en las funciones se les debe de indicar el tipo de variable o simplemente podemos escribir el parámetro que recibe?
   
   **R//** Para la declaración de parámetros es posible indicar el tipo del parámetro mediante ::TIPO. Puedes ver ejemplo de esto en el archivo de arreglos y struct.
+
+
+### Pregunta de Danloa98
+
+  Que tal, en el apartado de funciones del enunciado en ninguna parte se especifica la forma en que establecemos los parametros, debemos ponerle el tipo? O cuál es la forma correcta de hacerlo
+  
