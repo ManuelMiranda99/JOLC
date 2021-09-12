@@ -45,3 +45,11 @@ Que tal compañeros, nuevamente me disponia a probar el archivo de arreglos y nu
 
   Que tal, en el apartado de funciones del enunciado en ninguna parte se especifica la forma en que establecemos los parametros, debemos ponerle el tipo? O cuál es la forma correcta de hacerlo
   
+  
+  **R//** No se tomará en cuenta en la hoja de calificación la validación de tipos en los parametros de funciones. Solo es obligatorio que les funcione de la forma:
+  
+  ```console
+    function nombre_funcion(lista_id)  # donde lista_id puede ser una lista de identificadores de la forma:  a, b, c. O una lista vacía
+        # Cuerpo de la funcion
+    end;
+  ```
