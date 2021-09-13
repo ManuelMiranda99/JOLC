@@ -1,5 +1,5 @@
 function swap(i::Int64, j::Int64, arr) 
-    temp::Int64 = arr[i];
+    temp = arr[i]::Int64;
     arr[i] = arr[j];
     arr[j] = temp;
 end;
@@ -30,9 +30,9 @@ end;
 
 arreglo = [32,7*3,7,89,56,909,109,2,9,9874^0,44,3,820*10,11,8*0+8,10];
 bubbleSort(arreglo);
-println("BubbleSort => ",arreglo)
+println("BubbleSort => ",arreglo);
 
 arreglo = [32,7*3,7,89,56,909,109,2,9,9874^0,44,3,820*10,11,8*0+8,10];
 arreglo[1] = arreglo[2] - 21+4;
 insertionSort(arreglo);
-print("InsertionSort => ",arreglo)
+print("InsertionSort => ",arreglo);

@@ -58,9 +58,9 @@ while (index >= 0)
     if (index == 0) 
         global index = index + 100;
     elseif (index > 50) 
-        index = index / 2 - 25;
+        global index = index / 2 - 25;
     else 
-        index = (index / 2) - 1;
+        global index = (index / 2) - 1;
     end;
 
     println(index);
@@ -110,7 +110,7 @@ while (a < 5)
     print("El valor de a es: ", a, ", ");
 end;
 
-println("Se debió imprimir")
+println("Se debió imprimir");
 
 println("");
 println("=======================================================================");

@@ -28,6 +28,6 @@ end;
 
 println(factorial(5));
 
-println(ackerman(3, 7));
+println(ackerman(3, 5));
 
 hanoi(3, 1, 2, 3);

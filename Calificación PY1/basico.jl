@@ -8,7 +8,7 @@ println("---------------------------------");
 # COMENTARIO DE UNA LINEA
 val1 = val1 + 41 - 123 * 4 / (2 + 2 * 2) - (10 + (125 % 5)) * 2 ^ 2;
 val2 = 11 * (11 % (12 + -10)) + 22 / 2;
-val3 = 2 ^ (5 * 12 ^ 2) + 25 / 5#= COMENTARIO
+val3 = 2 ^ (2 * 12 / 6) + 25 / 5#= COMENTARIO
 MULTILINEA =#;
 println("Probando asignación de variables y aritmeticas");
 println(val1, " ", val2, " ", val3);
