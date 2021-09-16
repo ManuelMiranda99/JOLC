@@ -37,8 +37,8 @@ function contratos()
     for i in 1:(1*1+2)
         contrato::Contrato = Contrato(Actor("",0),Pelicula("",0));
         if(i < 4)
-            actor::Actor = crearActor(actores[i], i+38);
-            pelicula::Pelicula = crearPelicula(peliculas[i], i);
+            actor = crearActor(actores[i], i+38)::Actor;
+            pelicula = crearPelicula(peliculas[i], i)::Pelicula;
             contrato = contratar(actor, pelicula);
         end;
         imprimir(contrato);    
