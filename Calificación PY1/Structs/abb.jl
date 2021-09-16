@@ -33,7 +33,7 @@ function inOrden(nodo)
     if nodo != nothing
         inOrden(nodo.izq);
         println(nodo.value);
-        inOrden(nodo.der)
+        inOrden(nodo.der);
     end;
 end;
 
@@ -93,21 +93,21 @@ println("POSTORDEN");
 postOrden(arbol.root);
 
 println("BUSCANDO VALORES");
-print("Existe 7: ")
+print("Existe 7: ");
 println(encontrarValor(arbol.root, 7));
-print("Existe 36: ")
+print("Existe 36: ");
 println(encontrarValor(arbol.root, 36));
-print("Existe 1: ")
+print("Existe 1: ");
 println(encontrarValor(arbol.root, 1));
-print("Existe 58: ")
+print("Existe 58: ");
 println(encontrarValor(arbol.root, 58));
 
 println("BUSCANDO VALORES RECURSIVAMENTE");
-print("Existe 7: ")
+print("Existe 7: ");
 println(encontrarValorR(arbol.root, 7));
-print("Existe 36: ")
+print("Existe 36: ");
 println(encontrarValorR(arbol.root, 36));
-print("Existe 1: ")
+print("Existe 1: ");
 println(encontrarValorR(arbol.root, 1));
-print("Existe 58: ")
+print("Existe 58: ");
 println(encontrarValorR(arbol.root, 58));
