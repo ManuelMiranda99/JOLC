@@ -16,7 +16,7 @@ end;
 
 function insertionSort(arr) 
 
-    for i in 1:length(arr)
+    for i in 2:length(arr)
         j = i;
         temp = arr[i];
         while(j > 1 && arr[j - 1] > temp)
@@ -32,7 +32,7 @@ arreglo = [32,7*3,7,89,56,909,109,2,9,9874^0,44,3,820*10,11,8*0+8,10];
 bubbleSort(arreglo);
 println("BubbleSort => ",arreglo);
 
-arreglo = [32,7*3,7,89,56,909,109,2,9,9874^0,44,3,820*10,11,8*0+8,10];
-arreglo[1] = arreglo[2] - 21+4;
+arreglo = [32,7*3,7,89,56,909,109,2,9,9874^1,44,3,820*10,11,8*0+8,10];
+arreglo[1] = arreglo[2]^0;
 insertionSort(arreglo);
 print("InsertionSort => ",arreglo);
