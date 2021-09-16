@@ -54,7 +54,7 @@ function printMatriz(matrix)
         for j in i
             print(j, " ");
         end;
-        println("]")
+        println("]");
     end;
     println("]");
 end;
@@ -68,7 +68,7 @@ function sumarMatrices(matrix1, matrix2)
     
     for i in 1:length(matrix1)
         for j in 1:length(matrix1[1])
-            auxiliar[i][j] = matrix1[i][j] + matrix2[i][j]
+            auxiliar[i][j] = matrix1[i][j] + matrix2[i][j];
         end;
     end;
     return auxiliar;

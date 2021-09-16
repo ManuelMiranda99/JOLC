@@ -37,8 +37,8 @@ function imprimirScore(array)
             end;
         end;
     end;
-end
+end;
 
 insertarValores(score);
 println("Mapa" * "          " * "Enemigo" * "          " * "Jugador" * "          " * "Derrotados");    
-imprimirScore(score)
+imprimirScore(score);
