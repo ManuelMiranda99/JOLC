@@ -2,7 +2,7 @@ function ackerman(m::Int64, n::Int64)
     if m == 0
         return n + 1;
     elseif m > 0 && n == 0
-        return ackerman(m - 1, 1)
+        return ackerman(m - 1, 1);
     else
         return ackerman(m - 1, ackerman(m, n - 1));
     end;
