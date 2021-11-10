@@ -1,4 +1,4 @@
-function quicksort(array::Vector{Int64},low::Int64,n::Integer)::Int64
+function quicksort(array::Vector{Int64},low::Int64,n::Int64)::Int64
 	lo = low::Int64;
 	hi = n::Int64;
 	if lo >= n
