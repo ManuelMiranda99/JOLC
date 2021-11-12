@@ -53,3 +53,17 @@ Que tal compañeros, nuevamente me disponia a probar el archivo de arreglos y nu
         # Cuerpo de la funcion
     end;
   ```
+
+### Pregunta de Crol55
+Que tal auxiliares, estaba revisando el archivo de entrada structs.jl ubicado en la carpeta:
+
+**Calificación PY1/Structs/structs.jl**
+
+Y me di cuenta que en las lineas 38, 40 y 41, se maneja el tipo de dato al lado derecho de la variable (ej. actor::Actor), sin embargo en el **enunciado (pagina 15)** se muestra que para colocarle un tipo a una variable se le colocaba de ultimo como muestro acontinuacion. 
+  ```console
+    ID = Expresion :: TIPO; 
+    o 
+    ID = Expresion;
+  ```
+Cual es la correcta? Quedo al pendiente de su respuesta y gracias por su tiempo. 
+
