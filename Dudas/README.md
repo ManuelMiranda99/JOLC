@@ -35,6 +35,10 @@ Que tal compañeros, nuevamente me disponia a probar el archivo de arreglos y nu
 
 **R//** La operación punto se eliminará de los archivos de prueba. Para el punto 2, Julia realiza la operación de push y pop de la forma que se encuentra en los archivos de entrada. Como push!(ARREGLO, VALOR)
 
+Buenos dias compañeros, tenia un par de dudas sobre el proyecto 2
+1. Para el modulo hay un problema con el operador %, ya que este no permite realizarse con float, y nosotros al declarar los temporales como float hace que siempre falle
+2. Para la potencia el exponente siempre sera entero?
+
 ### Pregunta de DiiAns23:
   En la declaración de parámetros en las funciones se les debe de indicar el tipo de variable o simplemente podemos escribir el parámetro que recibe?
   
