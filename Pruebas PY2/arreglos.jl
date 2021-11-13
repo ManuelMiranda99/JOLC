@@ -4,7 +4,7 @@ function quicksort(array::Vector{Int64},low::Int64,n::Int64)::Int64
 	if lo >= n
 		return 0;
     end;
-	mid = array[(trunc(((lo + hi) / 2)))]::Int64;
+	mid = array[Int64(trunc(((lo + hi) / 2)))]::Int64;
 	while lo < hi
 		while (lo<hi && array[lo] < mid)
 			lo = lo + 1;

@@ -18,6 +18,8 @@ function StringFunction()
     println("string * numero decimal");
     println("decimal = " * string(45.3246));
     println("decimal = " * string(176/3));
+
+    
 end;
 
 function testambito()
@@ -36,3 +38,5 @@ end;
 StringFunction();
 testambito();
 todas("hoy ganO compi2");
+println("Repeticion:");
+    println("Compi2 "^4);
