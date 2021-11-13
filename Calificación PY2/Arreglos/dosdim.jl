@@ -1,4 +1,4 @@
-random = [1, 5, 8, -1, 21, 42, -55, 123, -5, 5, 11];
+random = [1, 5, 8, -1, 21, 42, -55, 123, -5, 5, 11]::Vector{Int64};
 
 a = [
     [
@@ -13,7 +13,7 @@ a = [
         3,
         4
     ]
-];
+]::Vector{Vector{Float64}};
 
 b = [
     [
@@ -28,7 +28,7 @@ b = [
         random[4] / 2,
         (random[3] * 10) % 7
     ]
-];
+]::Vector{Vector{Float64}};
 
 auxiliar = [
     [
@@ -43,11 +43,11 @@ auxiliar = [
         0.0,
         0.0
     ]
-];
+]::Vector{Vector{Float64}};
 
 
 # Si no tienen implementado este for, pueden cambiarlo por algún otro ciclo que funcione parecido.
-function printMatriz(matrix)
+function printMatriz(matrix::Vector{Vector{Float64}})
     println("[");
     for i in matrix
         print("[");
@@ -59,8 +59,7 @@ function printMatriz(matrix)
     println("]");
 end;
 
-function sumarMatrices(matrix1, matrix2)
-    global auxiliar;
+function sumarMatrices(matrix1::Vector{Vector{Float64}}, matrix2::Vector{Vector{Float64}})
     if length(matrix1) != length(matrix2)
         return "NO SE PUEDEN SUMAR. NO SON DE LA MISMA LONGITUD";
     end;
@@ -74,7 +73,7 @@ function sumarMatrices(matrix1, matrix2)
     return auxiliar;
 end;
 
-function compararMatrices(matrix1, matrix2)
+function compararMatrices(matrix1::Vector{Vector{Float64}}, matrix2::Vector{Vector{Float64}})
     if length(matrix1) != length(matrix2)
         return false;
     end;
@@ -103,15 +102,6 @@ println(sumarMatrices(a, b));
 println();
 println("COMPARAR MATRICES. SON IGUALES?");
 println(compararMatrices(a, b));
-
-println();
-println("Pop Matriz a");
-println(pop!(a));
-
-println();
-println("Push a b");
-push!(b, [3010.1999]);
-printMatriz(b);
 
 b = a;
 println();
