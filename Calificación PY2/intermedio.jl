@@ -8,7 +8,7 @@ while (x <= 10)
         print(x);
         print("x");
         print(y);
-        print("=")
+        print("=");
         println(x * y);
         global y = y + 1;
     end;
@@ -26,7 +26,7 @@ for i in 1:10
         print(i);
         print("x");
         print(j);
-        print("=")
+        print("=");
         println(i * j);
     end;
     println("--------------------------");
@@ -52,7 +52,7 @@ while (temporal <= iteraciones)
     print("Factorial de ");
     print(temporal);
     print(" = ");
-    println(factorial)
+    println(factorial);
     temporal = temporal + 1;
 end;
 
