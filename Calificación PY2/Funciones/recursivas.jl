@@ -1,12 +1,12 @@
 # Serie de Fibonacci
-function sumarSerieFibonacciRecursiva(n)::Int64
+function sumarSerieFibonacciRecursiva(n::Int64)::Int64
     if n > 0
-        return sumarSerieFibonacciRecursiva(n - 1) + SerieFibonacciRecursiva(n)
+        return sumarSerieFibonacciRecursiva(n - 1) + SerieFibonacciRecursiva(n);
     end;
     return 0;
 end;
 
-function SerieFibonacciRecursiva(n)::Int64
+function SerieFibonacciRecursiva(n::Int64)::Int64
     if (n == 0)
         return 0;
     elseif (n == 1)
@@ -14,14 +14,14 @@ function SerieFibonacciRecursiva(n)::Int64
     else
         return SerieFibonacciRecursiva(n - 1) + SerieFibonacciRecursiva(n - 2);
     end;
-end
+end;
 
 println("Sumar serie de Fibonacci recursiva 10: ", sumarSerieFibonacciRecursiva(10));
 println("Sumar serie de Fibonacci recursiva 16: ", sumarSerieFibonacciRecursiva(16));
 println("Sumar serie de Fibonacci recursiva 7: ", sumarSerieFibonacciRecursiva(7));
 
 # Multiplicar impares
-function multiplicarImpares(n)::Int64
+function multiplicarImpares(n::Int64)::Int64
     if (n == 0)
         return 0;
     elseif (n == 1)
